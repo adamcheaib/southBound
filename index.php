@@ -49,17 +49,6 @@ if (isset($receivedData)) {
             break;
         default:
             $innerHTML = '
-            <nav id="mainNav">
-            <img src="./siteMedia/logoSample.png" alt="">
-            <menu>
-                <a href="./" id="homeButton">HOME</a>
-                |
-                <div page-id="2">INVENTORY</div>
-                |
-                <div page-id="3">CONTACT</div>
-            </menu>
-        </nav>
-    
         <main id="wrapper">
     
             <div id="welcomeSquare">
