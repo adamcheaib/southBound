@@ -23,10 +23,13 @@ body {
     display: flex;
     justify-content: space-evenly;
     gap: 15px;
+    user-select: none;
 }
 
-#mainNav > menu > div {
+#mainNav > menu > div, #mainNav > menu > a {
     user-select: none;
+    text-decoration: none;
+    color: black;
 }
 
 #mainNav > menu > div:hover {
