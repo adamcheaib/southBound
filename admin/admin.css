@@ -60,6 +60,8 @@ textarea {
 #uploadContainer > button {
     margin-inline: auto;
     margin-top: 10px;
+    width: 120px;
+    height: 50px;
 }
 
 #uploadImages {
@@ -68,11 +70,11 @@ textarea {
 
 #uploadImages > div > .removeImageButton {
     background-color: rgb(255, 75, 75);
-    padding: 5px;
+    padding: 1px;
     border-radius: 8px ;
     box-sizing: border-box;
     border: solid 2px gray;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 #uploadImages > div > .removeImageButton:hover {
@@ -97,4 +99,8 @@ textarea {
 #moreImagesButton:active {
     color: black;
     background-color: white;
+}
+
+.imagesToAdd {
+    max-width: 240px;
 }

@@ -13,7 +13,7 @@
 <body>
     <nav id="adminMainMenu">
         <div>UPLOAD NEW CAR</div>
-        <div>INVENTORY</div>
+        <div>MANAGE INVENTORY</div>
     </nav>
 
     <main id="wrapper">
