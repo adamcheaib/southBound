@@ -24,6 +24,7 @@ body {
     border-radius: 15px;
     color: beige;
     text-shadow: 1px 1px black;
+    transition: box-shadow 400ms;
 }
 
 #adminMainMenu > div:hover {
@@ -31,6 +32,7 @@ body {
     user-select: none;
     background-color: green;
     box-shadow: 3px 3px black;
+    transition: box-shadow 400ms;
 }
 
 main {
@@ -40,4 +42,59 @@ main {
     margin-inline: auto;
     border-radius: 5px;
     padding: 8px;
+}
+
+#uploadContainer {
+    display: grid;
+    justify-content: center;
+}
+
+#carDescTitle {
+    margin-top: 50px;
+}
+
+textarea {
+    resize: none;   
+}
+
+#uploadContainer > button {
+    margin-inline: auto;
+    margin-top: 10px;
+}
+
+#uploadImages {
+    margin-top: 30px;
+}
+
+#uploadImages > div > .removeImageButton {
+    background-color: rgb(255, 75, 75);
+    padding: 5px;
+    border-radius: 8px ;
+    box-sizing: border-box;
+    border: solid 2px gray;
+    font-size: 15px;
+}
+
+#uploadImages > div > .removeImageButton:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: red;
+}
+
+#moreImagesButton {
+    justify-self: center;
+    background-color: lightgreen;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+#moreImagesButton:hover {
+    cursor: pointer;
+    user-select: none;
+    background-color: green;
+}
+
+#moreImagesButton:active {
+    color: black;
+    background-color: white;
 }
