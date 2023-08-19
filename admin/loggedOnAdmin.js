@@ -2,6 +2,7 @@
 
 // For security reasons, make it so that the Javascript codes are fetched once the admin has logged on!
 
+
 const uploadCarButton = document.querySelector("#adminMainMenu > div:nth-child(1)");
 const alreadyUploadedButton = document.querySelector("#adminMainMenu > div:nth-child(2)");
 const mainWrapper = document.getElementById("wrapper");
@@ -59,22 +60,65 @@ async function fetchUploadPage(event) {
 
 async function uploadCar(event) {
     event.preventDefault();
+    const dialog = document.querySelector("dialog");
 
     const formData = new FormData(event.target);
 
     try {
+        const allInputs = document.querySelectorAll("input");
+        allInputs.forEach(input => {
+            if (input.value === "") {
+                dialog.innerHTML = "";
+                dialog.innerHTML = `
+                    <div id="missingInfoNotification">
+                        <h2>All fields must be filled!</h2>
+                        <button>Close</button>
+                    </div>
+                `;
+
+                dialog.querySelector("button").addEventListener("click", () => dialog.close());
+            }
+        })
+
+
         const bodyPost = new Request("./requests.php", { method: "POST", body: formData });
         const response = await fetch(bodyPost);
+        const resource = await response.json();
         
         if (response.ok) {
-            const resource = await response.json();
-            console.log(resource)
+            dialog.innerHTML = "";
+            dialog.innerHTML = `
+                <div id="uploadNotification">
+                    <h2>Car uploaded!</h2>
+                    <button>Close</button>
+                </div>`;
+            
+            dialog.showModal();
+            dialog.querySelector("button").addEventListener("click", () => { dialog.close(); fetchUploadPage() });
         } else {
-            alert("ERROOOOOR");
+             dialog.innerHTML = "";
+             dialog.innerHTML = `
+            <div id="missingInfoNotification">
+                <h2>${resource.response}</h2>
+                <button>Close</button>
+            </div>
+        `;
+
+        dialog.showModal()
+        dialog.querySelector("button").addEventListener("click", () => dialog.close());
         }
 
     } catch (err) {
-        alert(err);
+        dialog.innerHTML = "";
+        dialog.innerHTML = `
+            <div id="missingInfoNotification">
+                <h2>${err.message}</h2>
+                <button>Close</button>
+            </div>
+        `;
+
+        dialog.showModal()
+        dialog.querySelector("button").addEventListener("click", () => dialog.close());
     }
     
 }

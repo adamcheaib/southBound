@@ -8,6 +8,21 @@ body {
     padding-inline: 10px;
 }
 
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.wrongCredentials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #adminMainMenu {
     text-align: center;
     width: 100%;
@@ -105,6 +120,22 @@ textarea {
     max-width: 240px;
 }
 
+dialog > #uploadNotification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+dialog > #missingInfoNotification {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 #inventoryContainer {
     height: 100%;
     display: grid;
@@ -172,7 +203,7 @@ textarea {
     font-weight: bold;
     user-select: none;
     border-radius: 8px;
-    border: solid 2px silver;
+    border: solid 2px silver
 }
 
 

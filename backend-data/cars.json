@@ -1,15 +1,1 @@
-[
-    {
-        "id": 0,
-        "carYear": "2001",
-        "carMake": "Audi",
-        "carModel": "TT",
-        "carMiles": "132000",
-        "carColor": "Green",
-        "carDescription": "Car runs extremely good!",
-        "carPrice": "$4300",
-        "images": [
-            "..\/carImages\/Audi TT 2001 Green 1\/image-1.jpg"
-        ]
-    }
-]
+[]

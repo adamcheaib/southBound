@@ -15,6 +15,27 @@ if ($method == "POST") {
 
     $receivedData = json_decode(file_get_contents("php://input"), true);
 
+    if (isset($receivedData["username"]) and isset($receivedData["password"])) {
+        if ($receivedData["username"] == "southbound" and $receivedData["password"] == "abouharbs") {
+            $adminNav = '
+            <nav id="adminMainMenu">
+                <div>UPLOAD NEW CAR</div>
+                <div>MANAGE INVENTORY</div>
+            </nav>
+            
+            <main id="wrapper"></main>
+            <dialog></dialog>';
+    
+            $message = ["html" => $adminNav, "scriptSource" => "./loggedOnAdmin.js"];
+            sendJSON($message);
+        } else {
+            $message = ["response" => "Wrong username or password!"];
+            sendJSON($message, 405);
+        }
+        
+    }
+
+
     if (isset($receivedData["page"])) {
         function uploadCarsPage() {
             return '
@@ -88,6 +109,13 @@ if ($method == "POST") {
     $carInformation = [];
     $newCarId = 0;
 
+    foreach($_POST as $keyName => $info) {
+        if ($_POST[$keyName] == "" or $_POST[$keyName] == " ") {
+            $message = ["response" => "Please fill out all the fields before uploading!"];
+            sendJSON($message, 405);
+        }
+    }
+
     if ($allCars != null) {
         foreach($allCars as $car) {
             if ($newCarId <= $car["id"]) {
@@ -100,7 +128,7 @@ if ($method == "POST") {
 
     function moveImagesThroughArray($arr, $index, $car) {
         // Checks if all of the files are images!
-        foreach ($arr as $key => $imageFile) {
+        foreach ($arr as $imageFile) {
             if (!getimagesize($imageFile["tmp_name"])) {
                 $message = ["response" => "Wrong type of file! Only JPG/JPEG/PNG files are accepted!"];
                 sendJSON($message, 400);
@@ -112,10 +140,12 @@ if ($method == "POST") {
         // If both of the exact same car exist!
         if (!file_exists("../carImages/$carFolderName")) {
             mkdir("../carImages/$carFolderName");
+            $carFolder = "../carImages/$carFolderName";
             $fileDestination = "../carImages/$carFolderName/" . "image-";
         } else {
             $tmpCarFolderName = $carFolderName . " " . $car["id"] + 1;
             mkdir("../carImages/$tmpCarFolderName");
+            $carFolder = "../carImages/$tmpCarFolderName";
             $fileDestination = "../carImages/$tmpCarFolderName/" . "image-";
         }        
 
@@ -127,7 +157,8 @@ if ($method == "POST") {
             $car["images"][] = $destination;
             $index++;
         }
-
+        
+        $car["directory"] = $carFolder;
         return $car;
     }
     
@@ -151,6 +182,10 @@ if ($method == "DELETE") {
 
         for ($i = 0; $i < count($allCars); $i++) {
             if ($idToDelete == $allCars[$i]["id"]) {
+                foreach ($allCars[$i]["images"] as $image) {
+                    unlink($image);
+                }
+                rmdir($allCars[$i]["directory"]);
                 array_splice($allCars, $i, 1);
                 file_put_contents(("../backend-data/cars.json"), json_encode($allCars, JSON_PRETTY_PRINT));
                 sendJSON($allCars);
