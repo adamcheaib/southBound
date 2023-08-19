@@ -88,9 +88,14 @@ async function fetchInventory(event) {
 
         if (response.ok) {
             mainWrapper.innerHTML = "";
+            
             const resource = await response.json();
+
+            if (resource.message.length == 0) {
+                mainWrapper.innerHTML = "<h1 style='text-align: center'>No cars uploaded</h1>"
+            }
+
             const allCars = resource.message;
-            console.log(allCars);
 
             const inventoryContainer = document.createElement("div");
             inventoryContainer.id = "inventoryContainer";
@@ -112,11 +117,29 @@ async function fetchInventory(event) {
                         <span style="font-weight: bold;">Price: <span style="font-weight: normal;">${car.carPrice}</span></span>
                     </div>
 
-                    <div class="adminTools"><img id="editPost" src="./media/edit.png" alt="edit"> <img class="deletePost" src="./media/trash.png" alt="delete"></div>
+                    <div class="adminTools">
+                    <img class="deletePost" src="./media/trash.png" alt="delete">
+                    </div>
                 `;
+
+                // For the above, add an img with the class "editPost" (for the styling) and add the feature to be able to edit a post.
+                // The image source is: ./media/edit.png
 
                 inventoryContainer.appendChild(div);
             })
+
+            const deleteButtons = document.querySelectorAll(".deletePost");
+
+            deleteButtons.forEach(deleteButton => deleteButton.addEventListener("click", (event) => {
+                const carID = event.target.parentElement.parentElement.getAttribute("reference");
+                confirmDelete(carID);
+
+            }))
+
+            async function deletePost(event) {
+                const carID = event.target.parentElement.parentElement.getAttribute("reference");
+                const details = { username: "test", carId: carID };
+            }
         }
     } catch (err) {
         mainWrapper.innerHTML = `<h1 style="text-align: center">Something either went wrong or you have not uploaded any cars!</h1>`;
@@ -125,3 +148,36 @@ async function fetchInventory(event) {
     
 alreadyUploadedButton.addEventListener("click", fetchInventory);
 
+function confirmDelete(int) {
+    const dialog = document.querySelector("dialog");
+    dialog.innerHTML = "";
+    dialog.showModal();
+    dialog.innerHTML = `
+    <h1>Delete post?</h1>
+        <div class="confirmDeleteDialog">
+            <div class="no">No</div>
+            <div class="yes">Yes</div>
+        </div>`;
+
+    const noButton = dialog.querySelector(".no");
+    noButton.addEventListener("click", () => dialog.close());
+
+    const yesButton = dialog.querySelector(".yes");
+    yesButton.addEventListener("click", () => deletePost(int));
+}
+
+async function deletePost(int) {
+    try {
+        const details = new Request("./requests.php", {method: "DELETE", body: JSON.stringify({ username: "test", carId: int })});
+        const response = await fetch(details);
+
+        if (response.ok) {
+            const resource = await response.json();
+            document.querySelector("dialog").close();
+            fetchInventory();
+        }
+    } catch (err) {
+        // Replace with a popup!
+        alert("ERROOOOR")
+    }
+}

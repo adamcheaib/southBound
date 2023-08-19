@@ -150,3 +150,48 @@ textarea {
     width: 30px;
     height: 30px;
 }
+
+.adminInventoryPosts > .adminTools > *:hover {
+    cursor: pointer;
+}
+
+.confirmDeleteDialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+}
+
+.confirmDeleteDialog > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    user-select: none;
+    border-radius: 8px;
+    border: solid 2px silver;
+}
+
+
+.confirmDeleteDialog > .no {
+    background-color: rgb(255, 83, 83);
+    flex-grow: 1;
+}
+
+.confirmDeleteDialog > .no:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+.confirmDeleteDialog > .yes {
+    background-color: lightgreen;
+    flex-grow: 1;
+}
+
+.confirmDeleteDialog > .yes:hover {
+    cursor: pointer;
+    background-color: green;
+}

@@ -142,4 +142,21 @@ if ($method == "POST") {
     sendJSON($allCars);
 }
 
+if ($method == "DELETE") {
+    $receivedData = json_decode(file_get_contents(("php://input")), true);
+    if ($receivedData["username"] == "test") {
+        $idToDelete = $receivedData["carId"];
+
+        $allCars = json_decode(file_get_contents("../backend-data/cars.json"), true);
+
+        for ($i = 0; $i < count($allCars); $i++) {
+            if ($idToDelete == $allCars[$i]["id"]) {
+                array_splice($allCars, $i, 1);
+                file_put_contents(("../backend-data/cars.json"), json_encode($allCars, JSON_PRETTY_PRINT));
+                sendJSON($allCars);
+            }
+        }
+    }
+}
+
 ?>

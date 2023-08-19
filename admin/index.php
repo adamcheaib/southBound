@@ -19,6 +19,8 @@
     <main id="wrapper">
 
     </main>
+
+    <dialog></dialog>
 </body>
 
 </html>
