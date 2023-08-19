@@ -83,3 +83,4 @@ alreadyUploadedButton.addEventListener("click", () => {
     // Fetch from the PHP-file and display all already existing cars.
     mainWrapper.innerHTML = ``;
 })
+

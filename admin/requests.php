@@ -1,4 +1,5 @@
 <?php
+// ini_set("display_errors", 1);
 
 function sendJSON($message, $httpResponse = 200) {
     header("application/json");
@@ -91,44 +92,47 @@ if ($method == "POST") {
     }
 
     $carInformation["id"] = $newCarId;
-    
-    function moveImages($imageFile, $index) {
-        // sendJSON(pathinfo($imageFile["full_path"], PATHINFO_EXTENSION));
 
-        if (!getimagesize($imageFile["tmp_name"])) {
-            $message = ["response" => "Wrong type of file! Only JPG/JPEG/PNG files are accepted!"];
-            sendJSON($message, 400);
+    function moveImagesThroughArray($arr, $index, $car) {
+        // Checks if all of the files are images!
+        foreach ($arr as $key => $imageFile) {
+            if (!getimagesize($imageFile["tmp_name"])) {
+                $message = ["response" => "Wrong type of file! Only JPG/JPEG/PNG files are accepted!"];
+                sendJSON($message, 400);
+            }
         }
 
-        $carFolderName = $_POST["carMake"] . " " . $_POST["carModel"] . " " . $_POST["carYear"];
-        $source = $imageFile["tmp_name"];
-    
+        $carFolderName = $_POST["carMake"] . " " . $_POST["carModel"] . " " . $_POST["carYear"] . " " . $_POST["carColor"];
+
+        // If both of the exact same car exist!
         if (!file_exists("../carImages/$carFolderName")) {
             mkdir("../carImages/$carFolderName");
-            $destination = "../carImages/$carFolderName/" . "image-" . $index;
+            $fileDestination = "../carImages/$carFolderName/" . "image-";
         } else {
-            $tmpCarFolderName = $carFolderName . " " . time();
+            $tmpCarFolderName = $carFolderName . " " . $car["id"] + 1;
             mkdir("../carImages/$tmpCarFolderName");
-            $destination = "../carImages/$tmpCarFolderName/" . "image-" . $index;
+            $fileDestination = "../carImages/$tmpCarFolderName/" . "image-";
+        }        
+
+        foreach ($arr as $imageFile) {
+            $extension = pathinfo($imageFile["full_path"], PATHINFO_EXTENSION);
+            $destination = $fileDestination . $index . "." . $extension;
+            $source = $imageFile["tmp_name"];
+            move_uploaded_file($source, $destination);
+            $car["images"][] = $destination;
+            $index++;
         }
 
-
-        move_uploaded_file($source, $destination);
-        return $destination;
+        return $car;
     }
-
+    
     foreach($_POST as $key => $info) {
         $carInformation[$key] = $info;
     }
 
-    $index = 1;
-    
-    foreach($_FILES as $image) {
-        $carInformation["images"][] = moveImages($image, $index);
-        $index++;
-    }
+    // moveImagesThroughArray($_FILES, 1, $carInformation);
 
-    $allCars[] = $carInformation;
+    $allCars[] = moveImagesThroughArray($_FILES, 1, $carInformation);
     file_put_contents("../backend-data/cars.json", json_encode($allCars, JSON_PRETTY_PRINT));
     sendJSON($allCars);
 }
