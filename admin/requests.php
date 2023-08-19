@@ -1,5 +1,5 @@
 <?php
-// ini_set("display_errors", 1);
+ini_set("display_errors", 1);
 
 function sendJSON($message, $httpResponse = 200) {
     header("application/json");
@@ -67,14 +67,19 @@ if ($method == "POST") {
         }
     
         function inventoryPage() {
-            return '
-            <h1>Hello World</h1>';
-        }
-    
-        if ($receivedData["username"] == "test") {
-            sendJSON(["message" => uploadCarsPage()]);
+            $allCars = json_decode(file_get_contents("../backend-data/cars.json"), true);
+            return $allCars;
         }
 
+        // Change so that the username is something that is stored in cookies!
+        if ($receivedData["page"] == "uploadCars" and $receivedData["username"] == "test") {
+            sendJSON(["message" => uploadCarsPage()]);
+        }
+        
+        // Change so that the username is something that is stored in cookies!
+        if ($receivedData["page"] == "inventory" and $receivedData["username"] == "test") {
+            sendJSON(["message" => inventoryPage()]); 
+        }
     }
 
 

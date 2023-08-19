@@ -78,9 +78,50 @@ async function uploadCar(event) {
     }
     
 }
+
+async function fetchInventory(event) {
+    try {
+        const details = { username: "test", page: "inventory" };
+        const bodyPost = new Request("./requests.php", { method: "POST", body: JSON.stringify(details) });
+
+        const response = await fetch(bodyPost);
+
+        if (response.ok) {
+            mainWrapper.innerHTML = "";
+            const resource = await response.json();
+            const allCars = resource.message;
+            console.log(allCars);
+
+            const inventoryContainer = document.createElement("div");
+            inventoryContainer.id = "inventoryContainer";
+            mainWrapper.appendChild(inventoryContainer);
+
+            allCars.forEach(car => {
+                const div = document.createElement("div");
+                div.className = "adminInventoryPosts";
+                div.setAttribute("reference", car.id);
+
+                div.innerHTML = `
+                    <img src="${car.images[0]}" class="adminCarCoverPic">
+                    <div class="adminCarInformation">
+                        <span style="font-weight: bold;">Year: <span style="font-weight: normal;">${car.carYear}</span></span>
+                        <span style="font-weight: bold;">Make: <span style="font-weight: normal;">${car.carMake}</span></span>
+                        <span style="font-weight: bold;">Model: <span style="font-weight: normal;">${car.carModel}</span></span>
+                        <span style="font-weight: bold;">Miles: <span style="font-weight: normal;">${car.carMiles}</span></span>
+                        <span style="font-weight: bold;">Color: <span style="font-weight: normal;">${car.carColor}</span></span>
+                        <span style="font-weight: bold;">Price: <span style="font-weight: normal;">${car.carPrice}</span></span>
+                    </div>
+
+                    <div class="adminTools"><img id="editPost" src="./media/edit.png" alt="edit"> <img class="deletePost" src="./media/trash.png" alt="delete"></div>
+                `;
+
+                inventoryContainer.appendChild(div);
+            })
+        }
+    } catch (err) {
+        mainWrapper.innerHTML = `<h1 style="text-align: center">Something either went wrong or you have not uploaded any cars!</h1>`;
+    }
+}
     
-alreadyUploadedButton.addEventListener("click", () => {
-    // Fetch from the PHP-file and display all already existing cars.
-    mainWrapper.innerHTML = ``;
-})
+alreadyUploadedButton.addEventListener("click", fetchInventory);
 

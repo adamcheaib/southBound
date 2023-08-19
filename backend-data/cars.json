@@ -1,0 +1,30 @@
+[
+    {
+        "id": 0,
+        "carYear": "2015",
+        "carMake": "Chevrolet",
+        "carModel": "Cruze",
+        "carMiles": "132000",
+        "carColor": "Silver",
+        "carDescription": "Ice cold AC, good engine and transmission. Everything on the car runs fine. AC compressor recently changed.",
+        "carPrice": "$5300",
+        "images": [
+            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-1.jpg",
+            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-2.jpg",
+            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-3.jpg"
+        ]
+    },
+    {
+        "id": 1,
+        "carYear": "2001",
+        "carMake": "Audi",
+        "carModel": "TT",
+        "carMiles": "150000",
+        "carColor": "Green",
+        "carDescription": "Convertible Audi TT that runs extremely smooth!",
+        "carPrice": "$2300",
+        "images": [
+            "..\/carImages\/Audi TT 2001 Green\/image-1.jpg"
+        ]
+    }
+]

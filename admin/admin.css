@@ -104,3 +104,49 @@ textarea {
 .imagesToAdd {
     max-width: 240px;
 }
+
+#inventoryContainer {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+.adminInventoryPosts {
+    background-color: white;
+    padding: 10px;
+    display: grid;
+    gap: 5px;
+    align-items: center;
+    grid-template-columns: 2fr 2fr 1fr;
+}
+
+.adminInventoryPosts > .adminCarCoverPic {
+    background-color: gray;
+    height: 100%;
+    width: 100%;
+}
+
+.adminInventoryPosts > .adminCarInformation {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminInventoryPosts > .adminCarDescription {
+    font-size: 10px;
+}
+
+.adminInventoryPosts > .adminTools {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminInventoryPosts > .adminTools > * {
+    width: 30px;
+    height: 30px;
+}
