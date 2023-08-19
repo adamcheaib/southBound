@@ -65,20 +65,20 @@ async function uploadCar(event) {
     const formData = new FormData(event.target);
 
     try {
-        const allInputs = document.querySelectorAll("input");
-        allInputs.forEach(input => {
-            if (input.value === "") {
-                dialog.innerHTML = "";
-                dialog.innerHTML = `
-                    <div id="missingInfoNotification">
-                        <h2>All fields must be filled!</h2>
-                        <button>Close</button>
-                    </div>
-                `;
+        // const allInputs = document.querySelectorAll("input");
+        // allInputs.forEach(input => {
+        //     if (input.value === "") {
+        //         dialog.innerHTML = "";
+        //         dialog.innerHTML = `
+        //             <div id="missingInfoNotification">
+        //                 <h2>All fields must be filled!</h2>
+        //                 <button>Close</button>
+        //             </div>
+        //         `;
 
-                dialog.querySelector("button").addEventListener("click", () => dialog.close());
-            }
-        })
+        //         dialog.querySelector("button").addEventListener("click", () => dialog.close());
+        //     }
+        // })
 
 
         const bodyPost = new Request("./requests.php", { method: "POST", body: formData });
@@ -158,7 +158,7 @@ async function fetchInventory(event) {
                         <span style="font-weight: bold;">Model: <span style="font-weight: normal;">${car.carModel}</span></span>
                         <span style="font-weight: bold;">Miles: <span style="font-weight: normal;">${car.carMiles}</span></span>
                         <span style="font-weight: bold;">Color: <span style="font-weight: normal;">${car.carColor}</span></span>
-                        <span style="font-weight: bold;">Price: <span style="font-weight: normal;">${car.carPrice}</span></span>
+                        <span style="font-weight: bold;">Price: <span style="font-weight: normal;">$${car.carPrice}</span></span>
                     </div>
 
                     <div class="adminTools">

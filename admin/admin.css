@@ -226,3 +226,13 @@ dialog > #missingInfoNotification {
     cursor: pointer;
     background-color: green;
 }
+
+@media (max-width: 500px) {
+    #adminMainMenu {
+        font-size: 12px;
+    }
+
+    .adminInventoryPosts > .adminCarInformation {
+        font-size: 12px;
+    }
+}

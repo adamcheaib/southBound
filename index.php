@@ -14,10 +14,10 @@ $innerHTML = '
 <main id="wrapper">
 
 <div id="welcomeSquare">
-    <div id="introImage">
-        <h1>
-            Scrolling images or something!
-        </h1>
+    <div id="introSquare">
+        <h2>Make a change</h2>
+        <h1>South Bound Auto Sales</h1>
+        <h2>Buy your new car from us</h2>
     </div>
 </div>
 
@@ -90,6 +90,7 @@ if (isset($receivedData)) {
     <title>South Bound Auto Sales | HOME</title>
     <link rel="stylesheet" href="./mainpage.css">
     <script defer src="./functions.js"></script>
+    <script defer src="./frontpage.js"></script>
     <script defer src="./index.js"></script>
 </head>
 
@@ -98,9 +99,9 @@ if (isset($receivedData)) {
         <img src="./siteMedia/logoSample.png" alt="">
         <menu>
             <a href="./" id="homeButton">HOME</a>
-            |
+
             <div page-id="2">INVENTORY</div>
-            |
+
             <div page-id="3">CONTACT</div>
         </menu>
     </nav>

@@ -1,1 +1,57 @@
-[]
+[
+    {
+        "id": 0,
+        "carYear": "2015",
+        "carMake": "Chevrolet",
+        "carModel": "Cruze",
+        "carMiles": "175000",
+        "carColor": "Silver",
+        "carDescription": "Car runs gooood",
+        "carPrice": "5300",
+        "images": [
+            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-1.jpg",
+            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-2.jpg",
+            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-3.jpg"
+        ],
+        "frontpageImages": [
+            ".\/carImages\/Chevrolet Cruze 2015 Silver\/image-1.jpg",
+            ".\/carImages\/Chevrolet Cruze 2015 Silver\/image-2.jpg",
+            ".\/carImages\/Chevrolet Cruze 2015 Silver\/image-3.jpg"
+        ],
+        "directory": "..\/carImages\/Chevrolet Cruze 2015 Silver"
+    },
+    {
+        "id": 1,
+        "carYear": "2001",
+        "carMake": "Audi",
+        "carModel": "TT",
+        "carMiles": "132000",
+        "carColor": "Green",
+        "carDescription": "Amazing!!!",
+        "carPrice": "2300",
+        "images": [
+            "..\/carImages\/Audi TT 2001 Green\/image-1.jpg"
+        ],
+        "frontpageImages": [
+            ".\/carImages\/Audi TT 2001 Green\/image-1.jpg"
+        ],
+        "directory": "..\/carImages\/Audi TT 2001 Green"
+    },
+    {
+        "id": 2,
+        "carYear": "2024",
+        "carMake": "Chevrolet",
+        "carModel": "Traverse",
+        "carMiles": "30000",
+        "carColor": "Red",
+        "carDescription": "AMAZINNGGG",
+        "carPrice": "12000",
+        "images": [
+            "..\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg"
+        ],
+        "frontpageImages": [
+            ".\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg"
+        ],
+        "directory": "..\/carImages\/Chevrolet Traverse 2024 Red"
+    }
+]

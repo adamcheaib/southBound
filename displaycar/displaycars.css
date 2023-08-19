@@ -1,0 +1,88 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+#mainNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    background-color: black;
+    height: 80px;
+    border-bottom: 2px solid gray;
+}
+
+#mainNav > menu {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 40px;
+    user-select: none;
+}
+
+#mainNav > menu > div, #mainNav > menu > a {
+    user-select: none;
+    color: white;
+    transition: color 300ms;
+    text-decoration: none;
+}
+
+#mainNav > menu > div:hover, #mainNav > menu > a:hover {
+    color: orange;
+    cursor: pointer;
+    transition: color 300ms;
+}
+
+img {
+    height: 50px;
+    width: 100px;
+}
+
+/* Car being displayed */
+
+#image-and-details {
+    background-color: black;
+    padding: 10px 20px 10px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+#image {
+    background-color: purple;
+    width: 50%;
+    height: 100%;
+}
+
+#details {
+    background-color: green;
+    width: 50%;
+}
+
+#imagesContainer {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+#imagesContainer > img {
+    height:100%;
+    width: 100%;
+}

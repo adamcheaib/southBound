@@ -73,11 +73,12 @@ if ($method == "POST") {
                     <textarea name="carDescription" id="carDescription" cols="30" rows="10"></textarea>
     
                     <span id="carPrice">Car Price</span>
-                    <input type="text" name="carPrice" placeholder="Enter Price">
+                    <input type="text" name="carPrice" placeholder="Enter Price (Do not add Dollar sign)">
     
-                    <div id="uploadImages">
+                    <div style="text-align: center;" id="uploadImages">
                         <span>Images</span>
                         <br>
+                        <span style="font-size: 10px">The first image is the one used as a cover picture</span>
                     </div>
     
                     <div id="moreImagesButton">Add more images</div>
@@ -142,11 +143,13 @@ if ($method == "POST") {
             mkdir("../carImages/$carFolderName");
             $carFolder = "../carImages/$carFolderName";
             $fileDestination = "../carImages/$carFolderName/" . "image-";
+            $mainPageFileDestination = "./carImages/$carFolderName/" . "image-";
         } else {
             $tmpCarFolderName = $carFolderName . " " . $car["id"] + 1;
             mkdir("../carImages/$tmpCarFolderName");
             $carFolder = "../carImages/$tmpCarFolderName";
             $fileDestination = "../carImages/$tmpCarFolderName/" . "image-";
+            $mainPageFileDestination = "./carImages/$tmpCarFolderName/" . "image-";
         }        
 
         foreach ($arr as $imageFile) {
@@ -155,6 +158,7 @@ if ($method == "POST") {
             $source = $imageFile["tmp_name"];
             move_uploaded_file($source, $destination);
             $car["images"][] = $destination;
+            $car["frontpageImages"][] = $mainPageFileDestination . $index . "." . $extension;
             $index++;
         }
         
