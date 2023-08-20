@@ -53,6 +53,7 @@ if ($method == "GET") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>South Bound Auto Sales | Good Quality, Used, Refurbished Cars</title>
     <link rel="stylesheet" href="./displaycars.css">
+    <script defer src="../index.js"></script>
     <script defer src="./displaycars.js"></script>
 </head>
 
@@ -70,7 +71,14 @@ if ($method == "GET") {
 
     <div id="wrapper">
         <div id="image-and-details">
-            <div id="details">Hola</div>
+            <div id="details">
+                <?php
+                echo "<h2>$color $year $make $model</h2>";
+                echo "<h3>$miles miles</h3>";
+                echo "<p>$description</p>";
+                echo "<span>Price: $$price</span>";
+                ?>
+            </div>
             <img id="image" src='<?php echo "." . $firstImage ?>'>
         </div>
 

@@ -1,5 +1,7 @@
 <?php
 
+// Switch so that the innerHTML that is sent sends the head for each page as well. This is so that I can switch between different Javascript files!
+
 function sendJSON($message, $httpResponse = 200) {
     header("application/json");
     http_response_code($httpResponse);
@@ -48,34 +50,7 @@ if (isset($receivedData)) {
             $innerHTML = "Contact HTML";
             break;
         default:
-            $innerHTML = '
-        <main id="wrapper">
-    
-            <div id="welcomeSquare">
-                <div id="introImage">
-                    <h1>
-                        Scrolling images or something!
-                    </h1>
-                </div>
-            </div>
-    
-            <div id="latestCarsContainer">
-                <h1>New Arrivals</h1>
-                <div id="latestCars">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
-                </div>
-                <a href="#">Click here for the full inventory</a>
-            </div>
-    
-        </main>';
+            $innerHTML;
     }
 }
 
@@ -89,7 +64,6 @@ if (isset($receivedData)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>South Bound Auto Sales | HOME</title>
     <link rel="stylesheet" href="./mainpage.css">
-    <script defer src="./functions.js"></script>
     <script defer src="./frontpage.js"></script>
     <script defer src="./index.js"></script>
 </head>
@@ -106,6 +80,11 @@ if (isset($receivedData)) {
         </menu>
     </nav>
     <?php echo $innerHTML ?>
+
+    <div style="background-color: #6283a6; height: 200px" id="lowerPart">
+        <h1>Hello</h1>
+    </div>
+
     <dialog></dialog>
 </body>
 

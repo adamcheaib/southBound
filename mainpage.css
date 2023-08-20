@@ -17,7 +17,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-inline: 20px;
-    background-color: black;
+    background-color: #6283a6;
     height: 80px;
     border-bottom: gray 2px solid;
 }
@@ -34,10 +34,11 @@ body {
     color: white;
     transition: color 300ms;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #mainNav > menu > div:hover, #mainNav > menu > a:hover {
-    color: orange;
+    color: black;
     cursor: pointer;
     transition: color 300ms;
 }
@@ -45,6 +46,7 @@ body {
 img {
     height: 50px;
     width: 100px;
+    background-color: black;
 }
 
 #welcomeSquare {
@@ -57,7 +59,7 @@ img {
 }
 
 #welcomeSquare > #introSquare {
-    color: red;
+    color: aliceblue;
     width: 50%;
     height: 100%;
     display: flex;

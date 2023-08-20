@@ -44,7 +44,7 @@
         "carModel": "Traverse",
         "carMiles": "30000",
         "carColor": "Red",
-        "carDescription": "AMAZINNGGG",
+        "carDescription": "Ice cold AC, good engine and transmission. Needs change on the AC compressor.",
         "carPrice": "12000",
         "images": [
             "..\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg"
@@ -53,5 +53,28 @@
             ".\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg"
         ],
         "directory": "..\/carImages\/Chevrolet Traverse 2024 Red"
+    },
+    {
+        "id": 3,
+        "carYear": "2015",
+        "carMake": "Chevrolet",
+        "carModel": "Cruze",
+        "carMiles": "175000",
+        "carColor": "Silver",
+        "carDescription": "AMAZINGGGG",
+        "carPrice": "10000",
+        "images": [
+            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-1.jpg",
+            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-2.jpg",
+            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-3.jpg",
+            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-4.jpg"
+        ],
+        "frontpageImages": [
+            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-1.jpg",
+            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-2.jpg",
+            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-3.jpg",
+            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-4.jpg"
+        ],
+        "directory": "..\/carImages\/Chevrolet Cruze 2015 Silver 4"
     }
 ]
