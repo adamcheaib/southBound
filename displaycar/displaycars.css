@@ -2,56 +2,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    margin: 0;
-    height: 100vh;
-}
-
-#wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 2rem;
-}
-
-#mainNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-inline: 20px;
-    background-color: black;
-    height: 80px;
-    border-bottom: 2px solid gray;
-}
-
-#mainNav > menu {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 40px;
-    user-select: none;
-}
-
-#mainNav > menu > div, #mainNav > menu > a {
-    user-select: none;
-    color: white;
-    transition: color 300ms;
-    text-decoration: none;
-}
-
-#mainNav > menu > div:hover, #mainNav > menu > a:hover {
-    color: orange;
-    cursor: pointer;
-    transition: color 300ms;
-}
-
-img {
-    height: 50px;
-    width: 100px;
-    background-color: #6283a6;
-}
-
 /* Car being displayed */
 
 #image-and-details {

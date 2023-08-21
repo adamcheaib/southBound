@@ -35,7 +35,7 @@ $innerHTML = '
             <img src="" alt="">
         </a>
     </div>
-    <a href="#">Click here for the full inventory</a>
+    <a id="checkOutFull" href="./?pageid=2">Click here for the full inventory</a>
 </div>
 
 </main>
@@ -89,7 +89,7 @@ if (isset($receivedData)) {
 
 <body>
     <nav id="mainNav">
-        <img src="./siteMedia/logoSample.png" alt="">
+        <img src="./siteMedia/logo-removebg-preview.png" alt="">
         <menu>
             <a href="./" id="homeButton">HOME</a>
 
@@ -97,6 +97,12 @@ if (isset($receivedData)) {
 
             <div page-id="3">CONTACT</div>
         </menu>
+
+        <div id="hamburgerMenu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </nav>
     <?php echo $innerHTML ?>
 </body>

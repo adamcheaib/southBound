@@ -38,26 +38,24 @@
         "directory": "..\/carImages\/Audi TT 2001 Green"
     },
     {
-        "id": 3,
-        "carYear": "2015",
+        "id": 2,
+        "carYear": "2024",
         "carMake": "Chevrolet",
-        "carModel": "Cruze",
-        "carMiles": "175000",
-        "carColor": "Silver",
-        "carDescription": "AMAZINGGGG",
-        "carPrice": "10000",
+        "carModel": "Traverse",
+        "carMiles": "19000",
+        "carColor": "Red",
+        "carDescription": "Car is so smooth Ali can drive it with his head.",
+        "carPrice": "17000",
         "images": [
-            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-1.jpg",
-            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-2.jpg",
-            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-3.jpg",
-            "..\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-4.jpg"
+            "..\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg",
+            "..\/carImages\/Chevrolet Traverse 2024 Red\/image-2.jpeg",
+            "..\/carImages\/Chevrolet Traverse 2024 Red\/image-3.jpg"
         ],
         "frontpageImages": [
-            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-1.jpg",
-            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-2.jpg",
-            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-3.jpg",
-            ".\/carImages\/Chevrolet Cruze 2015 Silver 4\/image-4.jpg"
+            ".\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg",
+            ".\/carImages\/Chevrolet Traverse 2024 Red\/image-2.jpeg",
+            ".\/carImages\/Chevrolet Traverse 2024 Red\/image-3.jpg"
         ],
-        "directory": "..\/carImages\/Chevrolet Cruze 2015 Silver 4"
+        "directory": "..\/carImages\/Chevrolet Traverse 2024 Red"
     }
 ]

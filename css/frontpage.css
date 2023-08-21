@@ -31,19 +31,37 @@
 }
 
 #latestCarsContainer > #latestCars {
-    display: flex;
     gap: 15px;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    width: 80%;
 }
 
 #latestCarsContainer > #latestCars > a > img {
-    height: 200px;
-    width: 250px;
+    height: 100%;
+    width: 100%;
     border-radius: 10px;
 }
 
-@media (max-width: 1000px) {
-    #mainNav > menu {
-        display: none;
+#checkOutFull {
+    background-color: #6283a6;
+    padding: 15px;
+    box-sizing: border-box;
+    color:white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 850px) {
+    #latestCarsContainer > #latestCars {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        width: 100%;
     }
 }

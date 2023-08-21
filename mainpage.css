@@ -46,8 +46,84 @@ body {
 img {
     height: 50px;
     width: 100px;
-    background-color: black;
 }
 
-/* Move to a separate file for the front page! */
+@media (min-width: 851px) {
+    #hamburgerMenu {
+        display: none;
+    }
+} 
 
+@media (min-width: 0px) and (max-width: 850px) {
+    #mainNav > menu {
+        display: none;
+    }
+
+    #mainNav > #hamburgerMenu > div {
+        height: 5px;
+        width: 30px;
+        border-bottom: 2px solid black;
+    }
+
+    #mainNav > #hamburgerMenu:hover {
+        cursor: pointer;
+    }
+}
+
+#phoneMenuPopUp {
+    height: 50vh;
+    width: 50vw;
+    display: grid;
+    background-color: beige;
+    border: solid 1px black;
+    animation-name: smoothMenu;
+    animation-duration: 400ms;
+}
+
+#phoneMenuPopUp > div {
+    display:grid;
+    grid-template-rows: 0.1fr 0.9fr;
+}
+
+#phoneMenuPopUp > div > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    background-color: black;
+    color:white;
+    justify-self: end;
+    width: 20px;
+    height: 20px;
+    font-weight: bold;
+    border: solid black 1px;
+    border-radius: 5px;
+       
+}
+
+#phoneMenuPopUp > div > ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    gap: 10px;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+    user-select: none;
+}
+
+
+@keyframes smoothMenu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}

@@ -52,6 +52,7 @@ if ($method == "GET") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>South Bound Auto Sales | Good Quality, Used, Refurbished Cars</title>
+    <link rel="stylesheet" href="../mainpage.css">
     <link rel="stylesheet" href="./displaycars.css">
     <script defer src="../index.js"></script>
     <script defer src="./displaycars.js"></script>
@@ -59,7 +60,7 @@ if ($method == "GET") {
 
 <body>
     <nav id="mainNav">
-        <img src="./siteMedia/logoSample.png" alt="">
+        <img src="../siteMedia/logo-removebg-preview.png" alt="">
         <menu>
             <a href="../" id="homeButton">HOME</a>
 
@@ -67,6 +68,12 @@ if ($method == "GET") {
 
             <div page-id="3">CONTACT</div>
         </menu>
+
+        <div id="hamburgerMenu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </nav>
 
     <div id="wrapper">
@@ -91,6 +98,8 @@ if ($method == "GET") {
             ?>
         </div>
     </div>
+
+    <dialog></dialog>
 </body>
 
 </html>
