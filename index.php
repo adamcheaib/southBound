@@ -39,15 +39,29 @@ $innerHTML = '
     <a href="#">Click here for the full inventory</a>
 </div>
 
-</main>';
+</main>
+
+<dialog></dialog>
+<script src="./frontpage.js"></script>
+<script src="./index.js"></script>';
+
+$cssFile = "./css/frontpage.css";
 
 if (isset($receivedData)) {
     switch ($receivedData) {
         case 2:
-            $innerHTML = "Inventory HTML here";
+            $innerHTML = '
+            <h1>Hello world</h1>
+            <dialog></dialog>
+            <script src="./index.js"></script>';
+            
+            $cssFile = "./css/inventory.css";
             break;
-        case "3":
-            $innerHTML = "Contact HTML";
+            case "3":
+                $innerHTML = 'Contact HTML
+                <dialog></dialog>
+                <script src="./index.js"></script>';
+                $cssFile = "./css/contact.css";
             break;
         default:
             $innerHTML;
@@ -64,8 +78,8 @@ if (isset($receivedData)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>South Bound Auto Sales | HOME</title>
     <link rel="stylesheet" href="./mainpage.css">
-    <script defer src="./frontpage.js"></script>
-    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href=<?php echo $cssFile; ?>>
+
 </head>
 
 <body>
@@ -80,12 +94,6 @@ if (isset($receivedData)) {
         </menu>
     </nav>
     <?php echo $innerHTML ?>
-
-    <div style="background-color: #6283a6; height: 200px" id="lowerPart">
-        <h1>Hello</h1>
-    </div>
-
-    <dialog></dialog>
 </body>
 
 </html>

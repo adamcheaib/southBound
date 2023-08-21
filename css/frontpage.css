@@ -1,0 +1,49 @@
+#welcomeSquare {
+    height: 500px;
+    display: flex;
+    background-image: url(../siteMedia/carBackground.gif);
+    background-position: center;
+    background-size: cover;
+    padding-left: 20px;
+}
+
+#welcomeSquare > #introSquare {
+    color: aliceblue;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#welcomeSquare > #introSquare > h2 {
+    font-style: italic;
+}
+
+#introImage > h1 {
+    color: white;
+}
+
+#latestCarsContainer {
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+}
+
+#latestCarsContainer > #latestCars {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#latestCarsContainer > #latestCars > a > img {
+    height: 200px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+@media (max-width: 1000px) {
+    #mainNav > menu {
+        display: none;
+    }
+}
