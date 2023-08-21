@@ -1,0 +1,63 @@
+body {
+    background-color: beige;
+}
+
+
+#wrapper {
+    background: linear-gradient(beige, #6283a6);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+#displayInventory {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    height: 80vh;
+    overflow-y: scroll;
+    font-size: 16px;
+}
+
+.carThumbnail {
+    width: 300px;
+    height: 300px;
+    border: solid 1px black;
+    justify-self: center;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-rows: 1fr 0.5fr;
+    text-decoration: none;
+}
+
+.carThumbnail > img {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.carThumbnail > .inventoryCarDetails {
+    background-color: beige;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: black;
+    font-size: 18px;
+}
+
+
+@media (max-width: 500px) {
+    #displayInventory {
+        grid-template-columns: 1fr;
+    }
+}
+

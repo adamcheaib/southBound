@@ -12,7 +12,6 @@ function sendJSON($message, $httpResponse = 200) {
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 $receivedData = $_GET["pageid"];
 $innerHTML = '
-
 <main id="wrapper">
 
 <div id="welcomeSquare">
@@ -24,7 +23,7 @@ $innerHTML = '
 </div>
 
 <div id="latestCarsContainer">
-    <h1>New Arrivals</h1>
+    <h1>Our latest arrivals</h1>
     <div id="latestCars">
         <a href="">
             <img src="" alt="">
@@ -51,9 +50,15 @@ if (isset($receivedData)) {
     switch ($receivedData) {
         case 2:
             $innerHTML = '
-            <h1>Hello world</h1>
+            <main id="wrapper">
+                <h1>Our inventory</h1>
+                <div id="displayInventory">
+                    <h1>Loading...</h1>
+                </div>
+            </main>
             <dialog></dialog>
-            <script src="./index.js"></script>';
+            <script src="./index.js"></script>
+            <script src="./js/inventory.js"></script>';
             
             $cssFile = "./css/inventory.css";
             break;
