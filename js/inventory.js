@@ -22,4 +22,4 @@ function fetchAllCars() {
     });
 }
 
-fetchAllCars();
+window.addEventListener("load", fetchAllCars);

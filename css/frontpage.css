@@ -14,7 +14,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: 1.8vw;
+    text-shadow: black 2px 2px;
 }
+
 
 #welcomeSquare > #introSquare > h2 {
     font-style: italic;
@@ -56,9 +59,16 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 850px) {
+
+    #welcomeSquare > #introSquare {
+        font-size: 18px;
+        width: 100%;
+    }
+
     #latestCarsContainer > #latestCars {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
