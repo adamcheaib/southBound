@@ -170,8 +170,6 @@ if ($method == "POST") {
         $carInformation[$key] = $info;
     }
 
-    // moveImagesThroughArray($_FILES, 1, $carInformation);
-
     $allCars[] = moveImagesThroughArray($_FILES, 1, $carInformation);
     file_put_contents("../backend-data/cars.json", json_encode($allCars, JSON_PRETTY_PRINT));
     sendJSON($allCars);

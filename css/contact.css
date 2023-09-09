@@ -1,3 +1,29 @@
 body {
-    background-color: red;
+    margin: 0;
+    height: 100vh;
+    background:linear-gradient(beige, #6283a6);
+}
+
+
+#contactWrapper {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+#mapAndInfo {
+    display: grid;
+}
+
+iframe {
+    justify-self: center;
+    height: 550px;
+    width: 50vw;
+}
+
+@media (max-width: 650px) {
+    iframe {
+        width:300px;
+        height: 400px;
+    }
 }

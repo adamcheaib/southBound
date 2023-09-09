@@ -6,6 +6,7 @@ console.log(latestCarsContainers);
 function getLatestCars() {
     fetch("./backend-data/pageSwitch.php").then(r => r.json()).then(allCars => {
 
+        document.querySelector("#latestCarsContainer > h1").textContent = "Our latest cars";
         const latest1 = allCars[allCars.length - 1];
         const latest2 = allCars[allCars.length - 2];
         const latest3 = allCars[allCars.length - 3];
@@ -20,4 +21,4 @@ function getLatestCars() {
     });    
 }
 
-getLatestCars()
+window.addEventListener("load", getLatestCars);

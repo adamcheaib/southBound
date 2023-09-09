@@ -98,7 +98,7 @@ img {
     font-weight: bold;
     border: solid black 1px;
     border-radius: 5px;
-       
+    
 }
 
 #phoneMenuPopUp > div > ul {
@@ -113,7 +113,7 @@ img {
     font-weight: bold;
     gap: 10px;
     letter-spacing: 1.5px;
-    font-size: 18px;
+    font-size: 24px;
     user-select: none;
 }
 
