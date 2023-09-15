@@ -57,5 +57,22 @@
             ".\/carImages\/Chevrolet Traverse 2024 Red\/image-3.jpg"
         ],
         "directory": "..\/carImages\/Chevrolet Traverse 2024 Red"
+    },
+    {
+        "id": 3,
+        "carYear": "1999",
+        "carMake": "Wilma",
+        "carModel": "Gotthardsson",
+        "carMiles": "20000",
+        "carColor": "Rosa",
+        "carDescription": "fin",
+        "carPrice": "3000",
+        "images": [
+            "..\/carImages\/Wilma Gotthardsson 1999 Rosa\/image-1.jpg"
+        ],
+        "frontpageImages": [
+            ".\/carImages\/Wilma Gotthardsson 1999 Rosa\/image-1.jpg"
+        ],
+        "directory": "..\/carImages\/Wilma Gotthardsson 1999 Rosa"
     }
 ]

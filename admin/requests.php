@@ -127,6 +127,7 @@ if ($method == "POST") {
 
     $carInformation["id"] = $newCarId;
 
+    // Rewrite this whole fucking shit!
     function moveImagesThroughArray($arr, $index, $car) {
         // Checks if all of the files are images!
         foreach ($arr as $imageFile) {
