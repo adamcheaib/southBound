@@ -1,78 +1,21 @@
 [
     {
         "id": 0,
-        "carYear": "2015",
-        "carMake": "Chevrolet",
-        "carModel": "Cruze",
-        "carMiles": "175000",
-        "carColor": "Silver",
-        "carDescription": "Car runs gooood",
-        "carPrice": "5300",
         "images": [
-            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-1.jpg",
-            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-2.jpg",
-            "..\/carImages\/Chevrolet Cruze 2015 Silver\/image-3.jpg"
+            "..\/carImages\/..\/carImages\/Han-Test-2013-Red\/image-1.png",
+            "..\/carImages\/..\/carImages\/Han-Test-2013-Red\/image-2.png"
         ],
         "frontpageImages": [
-            ".\/carImages\/Chevrolet Cruze 2015 Silver\/image-1.jpg",
-            ".\/carImages\/Chevrolet Cruze 2015 Silver\/image-2.jpg",
-            ".\/carImages\/Chevrolet Cruze 2015 Silver\/image-3.jpg"
+            ".\/carImages\/Han-Test-2013-Red\/image-1.png",
+            ".\/carImages\/Han-Test-2013-Red\/image-2.png"
         ],
-        "directory": "..\/carImages\/Chevrolet Cruze 2015 Silver"
-    },
-    {
-        "id": 1,
-        "carYear": "2001",
-        "carMake": "Audi",
-        "carModel": "TT",
-        "carMiles": "132000",
-        "carColor": "Green",
-        "carDescription": "Amazing!!!",
-        "carPrice": "2300",
-        "images": [
-            "..\/carImages\/Audi TT 2001 Green\/image-1.jpg"
-        ],
-        "frontpageImages": [
-            ".\/carImages\/Audi TT 2001 Green\/image-1.jpg"
-        ],
-        "directory": "..\/carImages\/Audi TT 2001 Green"
-    },
-    {
-        "id": 2,
-        "carYear": "2024",
-        "carMake": "Chevrolet",
-        "carModel": "Traverse",
-        "carMiles": "19000",
+        "carYear": "2013",
+        "carMake": "Han",
+        "carModel": "Test",
+        "carMiles": "230000",
         "carColor": "Red",
-        "carDescription": "Car is so smooth Ali can drive it with his head.",
-        "carPrice": "17000",
-        "images": [
-            "..\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg",
-            "..\/carImages\/Chevrolet Traverse 2024 Red\/image-2.jpeg",
-            "..\/carImages\/Chevrolet Traverse 2024 Red\/image-3.jpg"
-        ],
-        "frontpageImages": [
-            ".\/carImages\/Chevrolet Traverse 2024 Red\/image-1.jpg",
-            ".\/carImages\/Chevrolet Traverse 2024 Red\/image-2.jpeg",
-            ".\/carImages\/Chevrolet Traverse 2024 Red\/image-3.jpg"
-        ],
-        "directory": "..\/carImages\/Chevrolet Traverse 2024 Red"
-    },
-    {
-        "id": 3,
-        "carYear": "1999",
-        "carMake": "Wilma",
-        "carModel": "Gotthardsson",
-        "carMiles": "20000",
-        "carColor": "Rosa",
-        "carDescription": "fin",
-        "carPrice": "3000",
-        "images": [
-            "..\/carImages\/Wilma Gotthardsson 1999 Rosa\/image-1.jpg"
-        ],
-        "frontpageImages": [
-            ".\/carImages\/Wilma Gotthardsson 1999 Rosa\/image-1.jpg"
-        ],
-        "directory": "..\/carImages\/Wilma Gotthardsson 1999 Rosa"
+        "carDescription": "This car is beautiful \/Hana",
+        "carPrice": "5000",
+        "directory": "..\/carImages\/Han-Test-2013-Red"
     }
 ]

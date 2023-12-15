@@ -1,77 +1,81 @@
 #welcomeSquare {
-    height: 500px;
-    display: flex;
-    background-image: url(../siteMedia/carBackground.gif);
-    background-position: center;
-    background-size: cover;
-    padding-left: 20px;
+  height: 500px;
+  display: flex;
+  background-image: url(../siteMedia/carBackground.gif);
+  background-position: center;
+  background-size: cover;
+  padding-left: 20px;
 }
 
 #welcomeSquare > #introSquare {
-    color: aliceblue;
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 1.8vw;
-    text-shadow: black 2px 2px;
+  color: aliceblue;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.8vw;
+  text-shadow: black 2px 2px;
 }
 
-
 #welcomeSquare > #introSquare > h2 {
-    font-style: italic;
+  font-style: italic;
 }
 
 #introImage > h1 {
-    color: white;
+  color: white;
 }
 
 #latestCarsContainer {
-    display: grid;
-    place-items: center;
-    margin-top: 20px;
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
 }
 
 #latestCarsContainer > #latestCars {
-    gap: 15px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding-left: 30px;
-    padding-right: 30px;
-    box-sizing: border-box;
-    width: 80%;
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  width: 80%;
+}
+
+#latestCarsContainer > #latestCars > a {
+  flex-grow: 1;
+  max-width: 300px;
+  max-height: 200px;
 }
 
 #latestCarsContainer > #latestCars > a > img {
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
 }
 
 #checkOutFull {
-    background-color: #6283a6;
-    padding: 15px;
-    box-sizing: border-box;
-    color:white;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  background-color: #6283a6;
+  padding: 15px;
+  box-sizing: border-box;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 850px) {
+  #welcomeSquare > #introSquare {
+    font-size: 18px;
+    width: 100%;
+  }
 
-    #welcomeSquare > #introSquare {
-        font-size: 18px;
-        width: 100%;
-    }
-
-    #latestCarsContainer > #latestCars {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        width: 100%;
-    }
+  #latestCarsContainer > #latestCars {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+  }
 }

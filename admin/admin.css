@@ -1,238 +1,261 @@
 * {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    margin: 0;
-    background-color: beige;
-    padding-inline: 10px;
+  margin: 0;
+  background-color: beige;
+  padding-inline: 10px;
 }
 
 #loginForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .wrongCredentials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #adminMainMenu {
-    text-align: center;
-    width: 100%;
-    margin-inline: auto;
-    font-size: 1.2rem;
-    margin-top: 15px;
+  text-align: center;
+  width: 100%;
+  margin-inline: auto;
+  font-size: 1.2rem;
+  margin-top: 15px;
 }
 
-
 #adminMainMenu > div {
-    display: inline;
-    padding: 10px;
-    background-color: lightgreen;
-    border-radius: 15px;
-    color: beige;
-    text-shadow: 1px 1px black;
-    transition: box-shadow 400ms;
+  display: inline;
+  padding: 10px;
+  background-color: lightgreen;
+  border-radius: 15px;
+  color: beige;
+  text-shadow: 1px 1px black;
+  transition: box-shadow 400ms;
 }
 
 #adminMainMenu > div:hover {
-    cursor: pointer;
-    user-select: none;
-    background-color: green;
-    box-shadow: 3px 3px black;
-    transition: box-shadow 400ms;
+  cursor: pointer;
+  user-select: none;
+  background-color: green;
+  box-shadow: 3px 3px black;
+  transition: box-shadow 400ms;
 }
 
 main {
-    border: solid 2px black;
-    margin-top: 20px;
-    max-width: 800px;
-    margin-inline: auto;
-    border-radius: 5px;
-    padding: 8px;
+  border: solid 2px black;
+  margin-top: 20px;
+  max-width: 800px;
+  margin-inline: auto;
+  border-radius: 5px;
+  padding: 8px;
 }
 
 #uploadContainer {
-    display: grid;
-    justify-content: center;
+  display: grid;
+  justify-content: center;
 }
 
 #carDescTitle {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 textarea {
-    resize: none;   
+  resize: none;
 }
 
 #uploadContainer > button {
-    margin-inline: auto;
-    margin-top: 10px;
-    width: 120px;
-    height: 50px;
+  margin-inline: auto;
+  margin-top: 10px;
+  width: 120px;
+  height: 50px;
 }
 
 #uploadImages {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 #uploadImages > div > .removeImageButton {
-    background-color: rgb(255, 75, 75);
-    padding: 1px;
-    border-radius: 8px ;
-    box-sizing: border-box;
-    border: solid 2px gray;
-    font-size: 13px;
+  background-color: rgb(255, 75, 75);
+  padding: 1px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: solid 2px gray;
+  font-size: 13px;
 }
 
 #uploadImages > div > .removeImageButton:hover {
-    cursor: pointer;
-    user-select: none;
-    background-color: red;
+  cursor: pointer;
+  user-select: none;
+  background-color: red;
 }
 
 #moreImagesButton {
-    justify-self: center;
-    background-color: lightgreen;
-    border-radius: 15px;
-    padding: 10px;
+  justify-self: center;
+  background-color: lightgreen;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 #moreImagesButton:hover {
-    cursor: pointer;
-    user-select: none;
-    background-color: green;
+  cursor: pointer;
+  user-select: none;
+  background-color: green;
 }
 
 #moreImagesButton:active {
-    color: black;
-    background-color: white;
+  color: black;
+  background-color: white;
 }
 
 .imagesToAdd {
-    max-width: 240px;
+  max-width: 240px;
 }
 
 dialog > #uploadNotification {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 dialog > #missingInfoNotification {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #inventoryContainer {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
 }
 
 .adminInventoryPosts {
-    background-color: white;
-    padding: 10px;
-    display: grid;
-    gap: 5px;
-    align-items: center;
-    grid-template-columns: 2fr 2fr 1fr;
+  background-color: white;
+  padding: 10px;
+  display: grid;
+  gap: 5px;
+  align-items: center;
+  grid-template-columns: 2fr 2fr 1fr;
 }
 
 .adminInventoryPosts > .adminCarCoverPic {
-    background-color: gray;
-    height: 100%;
-    width: 100%;
+  background-color: gray;
+  height: 100%;
+  width: 100%;
 }
 
 .adminInventoryPosts > .adminCarInformation {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .adminInventoryPosts > .adminCarDescription {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .adminInventoryPosts > .adminTools {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
 .adminInventoryPosts > .adminTools > * {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .adminInventoryPosts > .adminTools > *:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .confirmDeleteDialog {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
 }
 
 .confirmDeleteDialog > * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    user-select: none;
-    border-radius: 8px;
-    border: solid 2px silver
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  user-select: none;
+  border-radius: 8px;
+  border: solid 2px silver;
 }
 
-
 .confirmDeleteDialog > .no {
-    background-color: rgb(255, 83, 83);
-    flex-grow: 1;
+  background-color: rgb(255, 83, 83);
+  flex-grow: 1;
 }
 
 .confirmDeleteDialog > .no:hover {
-    cursor: pointer;
-    background-color: red;
+  cursor: pointer;
+  background-color: red;
 }
 
 .confirmDeleteDialog > .yes {
-    background-color: lightgreen;
-    flex-grow: 1;
+  background-color: lightgreen;
+  flex-grow: 1;
 }
 
 .confirmDeleteDialog > .yes:hover {
-    cursor: pointer;
-    background-color: green;
+  cursor: pointer;
+  background-color: green;
 }
 
 @media (max-width: 500px) {
-    #adminMainMenu {
-        font-size: 12px;
-    }
+  #adminMainMenu {
+    font-size: 12px;
+  }
 
-    .adminInventoryPosts > .adminCarInformation {
-        font-size: 12px;
-    }
+  .adminInventoryPosts > .adminCarInformation {
+    font-size: 12px;
+  }
+}
+
+.uploadingProcess::after {
+  content: "";
+  animation-name: threeDots;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes threeDots {
+  0% {
+    content: "";
+  }
+
+  25% {
+    content: ".";
+  }
+
+  50% {
+    content: "..";
+  }
+
+  100% {
+    content: "...";
+  }
 }

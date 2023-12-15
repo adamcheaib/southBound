@@ -1,24 +1,42 @@
-"use strict"
+"use strict";
 
 const latestCarsContainers = document.querySelectorAll("#latestCars > a");
 console.log(latestCarsContainers);
 
 function getLatestCars() {
-    fetch("./backend-data/pageSwitch.php").then(r => r.json()).then(allCars => {
+  fetch("./backend-data/pageSwitch.php")
+    .then((r) => r.json())
+    .then((allCars) => {
+      document.querySelector("#latestCarsContainer > h1").textContent =
+        "Our latest cars";
 
-        document.querySelector("#latestCarsContainer > h1").textContent = "Our latest cars";
-        const latest1 = allCars[allCars.length - 1];
-        const latest2 = allCars[allCars.length - 2];
-        const latest3 = allCars[allCars.length - 3];
+      const latestCar1 = document.querySelector(
+        "#latestCars > a > img:nth-child(1)"
+      );
+      const latestCar2 = document.querySelector(
+        "#latestCars > a > img:nth-child(2)"
+      );
+      const latestCar3 = document.querySelector(
+        "#latestCars > a > img:nth-child(3)"
+      );
 
-        latestCarsContainers[0].href = `./displaycar/?car=${latest1["id"]}`;
-        latestCarsContainers[1].href = `./displaycar/?car=${latest2["id"]}`;
-        latestCarsContainers[2].href = `./displaycar/?car=${latest3["id"]}`;
+      let decrementIndex = 1;
 
-        latestCarsContainers[0].querySelector("img").src = latest1.frontpageImages[0];
-        latestCarsContainers[1].querySelector("img").src = latest2.frontpageImages[0];
-        latestCarsContainers[2].querySelector("img").src = latest3.frontpageImages[0];
-    });    
+      if (allCars[0] !== undefined) document.getElementById("noCars").remove(); // Remove or hide the latest images so that they are hierarchical.
+
+      for (let i = 0; i < 3; i++) {
+        if (allCars[allCars.length - decrementIndex] === undefined) {
+          latestCarsContainers[i].style.display = "none";
+        } else {
+          latestCarsContainers[i].href =
+            "./displaycar/?car=" + allCars[allCars.length - decrementIndex].id;
+          latestCarsContainers[i].querySelector("img").src =
+            allCars[allCars.length - decrementIndex].frontpageImages[0];
+        }
+
+        decrementIndex++;
+      }
+    });
 }
 
 window.addEventListener("load", getLatestCars);

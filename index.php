@@ -25,6 +25,7 @@ $innerHTML = '
 <div id="latestCarsContainer">
     <h1>Loading...</h1>
     <div id="latestCars">
+    <p id="noCars">The inventory is currently empty. Please check again!</p>
         <a href="">
             <img src="" alt="Latest car 1">
         </a>
