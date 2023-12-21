@@ -21,8 +21,14 @@ function getLatestCars() {
       );
 
       let decrementIndex = 1;
+      console.log(allCars);
 
-      if (allCars[0] !== undefined) document.getElementById("noCars").remove(); // Remove or hide the latest images so that they are hierarchical.
+      if (allCars.length != 0) {
+        if (allCars[0] !== undefined)
+          document.getElementById("noCars").remove(); // Remove or hide the latest images so that they are hierarchical.
+      } else {
+        document.getElementById("noCars").style.visibility = "visible"; // Remove or hide the latest images so that they are hierarchical.
+      }
 
       for (let i = 0; i < 3; i++) {
         if (allCars[allCars.length - decrementIndex] === undefined) {

@@ -144,7 +144,7 @@ async function uploadCar(event) {
 
 async function fetchInventory(event) {
   try {
-    const details = { username: "test", page: "inventory" };
+    const details = { username: "southbound", page: "inventory" };
     const bodyPost = new Request("./requests.php", {
       method: "POST",
       body: JSON.stringify(details),

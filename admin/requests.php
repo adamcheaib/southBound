@@ -94,12 +94,12 @@ if ($method == "POST") {
         }
 
         // Change so that the username is something that is stored in cookies!
-        if ($receivedData["page"] == "uploadCars" and $receivedData["username"] == "test") {
+        if ($receivedData["page"] == "uploadCars" and $receivedData["username"] == "southbound") {
             sendJSON(["message" => uploadCarsPage()]);
         }
         
         // Change so that the username is something that is stored in cookies!
-        if ($receivedData["page"] == "inventory" and $receivedData["username"] == "test") {
+        if ($receivedData["page"] == "inventory" and $receivedData["username"] == "southbound") {
             sendJSON(["message" => inventoryPage()]); 
         }
     }
