@@ -1,81 +1,118 @@
-#welcomeSquare {
-  height: 500px;
-  display: flex;
-  background-image: url(../siteMedia/carBackground.gif);
-  background-position: center;
+/* Banner decoration start */
+#banner {
+  background-image: url(../siteMedia/bannerImage.jpg);
+  background-position: top;
   background-size: cover;
-  padding-left: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  height: 250px;
+  display: grid;
+  grid-template-rows: 0.8fr 0.2fr;
 }
 
-#welcomeSquare > #introSquare {
-  color: aliceblue;
-  width: 50%;
-  height: 100%;
+#titleSubtitle {
+  display: flex;
+  flex-direction: column;
+  margin-left: 45px;
+  align-self: center;
+}
+
+#titleSubtitle > * {
+  color: white;
+  margin: 0;
+}
+
+#titleSubtitle > h1 {
+  font-family: iceberg;
+  text-decoration: underline;
+  font-size: 52px;
+}
+
+#titleSubtitle > h2 {
+  font-family: imFell;
+  font-size: 36px;
+}
+
+#banner > #referAcustomer {
+  color: white;
+  font-family: notoSans;
+  justify-self: end;
+  margin-right: 15px;
+  align-self: end;
+  position: relative;
+  bottom: 8px;
+  font-size: 23px;
+}
+/* Banner end */
+
+/* Main content start */
+#mainContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.8vw;
-  text-shadow: black 2px 2px;
+  align-items: center;
+  margin-top: 75px;
 }
 
-#welcomeSquare > #introSquare > h2 {
-  font-style: italic;
-}
-
-#introImage > h1 {
+#mainContent > h2 {
+  margin: 0;
+  font-family: iceberg;
+  font-size: 42px;
   color: white;
 }
 
-#latestCarsContainer {
+#noCarsText {
+  margin: 0;
+  color: white;
+  font-family: notoSans;
+  text-align: center;
+}
+
+#mainContent > #latestVehiclesContainer {
+  font-size: 20px;
+  color: white;
   display: grid;
-  place-items: center;
-  margin-top: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
 }
 
-#latestCarsContainer > #latestCars {
-  gap: 15px;
-  display: flex;
-  justify-content: center;
-  padding-left: 30px;
-  padding-right: 30px;
-  box-sizing: border-box;
-  width: 80%;
+/* This is where the design for each should be. */
+/* .car {
+    height: 250px;
+    width: 250px;
+    background-color: red;
+  } */
+
+#latestVehiclesContainer > p {
+  grid-column: 1 / 4;
+  justify-self: center;
 }
 
-#latestCarsContainer > #latestCars > a {
-  flex-grow: 1;
-  max-width: 300px;
-  max-height: 200px;
-}
-
-#latestCarsContainer > #latestCars > a > img {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-}
-
-#checkOutFull {
-  background-color: #6283a6;
-  padding: 15px;
-  box-sizing: border-box;
+#mainContent > #clickForInventory {
+  margin-top: 25px;
+  font-family: notoSans;
   color: white;
-  border-radius: 10px;
+  background-color: black;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  border: solid 1px white;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-decoration: none;
 }
 
-@media (max-width: 850px) {
-  #welcomeSquare > #introSquare {
-    font-size: 18px;
-    width: 100%;
-  }
+footer {
+  margin-top: auto;
+  color: white;
+  font-family: notoSans;
+  font-size: 16px;
+  border-top: 1px black solid;
+}
 
-  #latestCarsContainer > #latestCars {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    width: 100%;
-  }
+footer > p {
+  margin-left: 10px;
 }

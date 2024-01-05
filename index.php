@@ -12,38 +12,61 @@ function sendJSON($message, $httpResponse = 200) {
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 $receivedData = $_GET["pageid"];
 $innerHTML = '
-<main id="wrapper">
+<div id="wrapper">
+<!-- Nav Menu start -->
+<nav id="navigationMenu">
+  <img
+    id="siteLogo"
+    src="./siteMedia/newSiteLogo.png"
+    alt="Company Logo"
+  />
 
-<div id="welcomeSquare">
-    <div id="introSquare">
-        <h2>Make a change</h2>
-        <h1>South Bound Auto Sales</h1>
-        <h2>Buy your new car from us</h2>
-    </div>
+  <div id="navigationButtonsContainer">
+    <div pageId="1" id="homeButton">Home</div>
+    <div pageId="2" id="inventoryButton">Inventory</div>
+    <div pageId="3" id="contactButton">Contact</div>
+  </div>
+</nav>
+<!-- Nav menu end -->
+
+<!-- Banner start -->
+<div id="banner">
+  <div id="titleSubtitle">
+    <h1>South Bound Auto Sales</h1>
+    <h2>Reliable & Trustworthy</h2>
+  </div>
+
+  <div id="referAcustomer">Refer a customer and recieve $100!</div>
+</div>
+<!-- Banner end -->
+
+<!-- Main Content start -->
+<div id="mainContent">
+  <h2 id="latestVehiclesTitle">Latest Vehicles</h2>
+
+  <p id="noCarsText">
+    Our inventory is currently empty. Please check again later.
+  </p>
+
+  <div id="latestVehiclesContainer">
+    <div class="car"></div>
+    <div class="car"></div>
+    <div class="car"></div>
+  </div>
+
+  <a id="clickForInventory" href="./?pageid=2">
+    Click here for full inventory
+  </a>
 </div>
 
-<div id="latestCarsContainer">
-    <h1>Loading...</h1>
-    <div id="latestCars">
-    <p id="noCars" style="visibility: hidden">The inventory is currently empty. Please check again!</p>
-        <a href="">
-            <img src="" alt="Latest car 1">
-        </a>
-        <a href="">
-            <img src="" alt="Latest car 2">
-        </a>
-        <a href="">
-            <img src="" alt="Latest car 3">
-        </a>
-    </div>
-    <a id="checkOutFull" href="./?pageid=2">Click here for the full inventory</a>
-</div>
-
-</main>
-
-<dialog></dialog>
-<script src="./frontpage.js"></script>
-<script src="./index.js"></script>';
+<footer>
+  <p>
+    Address: 4513 Ogeechee Rd, Savannah, GA 31405 <br />
+    Phone: (912) 441 9680
+  </p>
+</footer>
+<!-- Main content end -->
+</div>';
 
 $cssFile = "./css/frontpage.css";
 
@@ -90,31 +113,24 @@ if (isset($receivedData)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Bound Auto Sales | HOME</title>
+    <title>Cheap Cars, Good Cars, Used Cars, Warranty On Cars, Savannah GA | South Bound Auto Sales</title>
     <link rel="stylesheet" href="./mainpage.css">
     <link rel="stylesheet" href=<?php echo $cssFile; ?>>
 
 </head>
 
 <body>
-    <nav id="mainNav">
-        <a href="./">
-            <img defer src="./siteMedia/logo-removebg-preview.png" alt="">
-        </a>
-        <menu>
-            <a href="./" id="homeButton">HOME</a>
 
-            <div page-id="2">INVENTORY</div>
-
-            <div page-id="3">CONTACT</div>
-        </menu>
-
-        <div id="hamburgerMenu">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>South Bound Auto Sales | Good Quality, Used, Refurbished Cars</title>
+        <link rel="icon" type="image/png" sizes="64x64" href="./siteMedia/newSiteLogo.png">
+        <link rel="stylesheet" href="./mainpage.css" />
+        <link rel="stylesheet" href=<?php echo $cssFile ?>>
+        <script defer src="./index.js"></script>
+        <script defer src="./displaycar/displaycars.js"></script>
+    </head>
     <?php echo $innerHTML ?>
 </body>
 

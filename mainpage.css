@@ -3,132 +3,79 @@
   src: url(./fonts/Iceberg-Regular.ttf);
 }
 
-* {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  scroll-behavior: smooth;
+@font-face {
+  font-family: imFell;
+  src: url(./fonts/IMFellDoublePicaSC-Regular.ttf);
+}
+
+@font-face {
+  font-family: notoSans;
+  src: url(./fonts/notoSans.ttf);
 }
 
 body {
   height: 100vh;
+  height: 100svh;
   margin: 0;
+  background: rgb(7, 11, 15);
+  background: linear-gradient(
+    180deg,
+    rgba(7, 11, 15, 1) 50%,
+    rgba(30, 49, 68, 1) 100%
+  );
 }
 
 #wrapper {
-  height: 100%;
-}
-
-#mainNav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 20px;
-  background-color: #6283a6;
-  height: 80px;
-  border-bottom: gray 2px solid;
-}
-
-#mainNav > menu {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 40px;
-  user-select: none;
-}
-
-#mainNav > menu > div,
-#mainNav > menu > a {
-  user-select: none;
-  color: white;
-  transition: color 300ms;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-#mainNav > menu > div:hover,
-#mainNav > menu > a:hover {
-  color: black;
-  cursor: pointer;
-  transition: color 300ms;
-}
-
-img {
-  height: 50px;
-  width: 100px;
-}
-
-@media (min-width: 851px) {
-  #hamburgerMenu {
-    display: none;
-  }
-}
-
-@media (min-width: 0px) and (max-width: 850px) {
-  #mainNav > menu {
-    display: none;
-  }
-
-  #mainNav > #hamburgerMenu > div {
-    height: 5px;
-    width: 30px;
-    border-bottom: 2px solid black;
-  }
-
-  #mainNav > #hamburgerMenu:hover {
-    cursor: pointer;
-  }
-}
-
-#phoneMenuPopUp {
-  height: 50vh;
-  width: 50vw;
-  display: grid;
-  background-color: beige;
-  border: solid 1px black;
-  animation-name: smoothMenu;
-  animation-duration: 400ms;
-}
-
-#phoneMenuPopUp > div {
-  display: grid;
-  grid-template-rows: 0.1fr 0.9fr;
-}
-
-#phoneMenuPopUp > div > span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  background-color: black;
-  color: white;
-  justify-self: end;
-  width: 20px;
-  height: 20px;
-  font-weight: bold;
-  border: solid black 1px;
-  border-radius: 5px;
-}
-
-#phoneMenuPopUp > div > ul {
-  padding: 0;
-  list-style: none;
-  text-align: center;
-  width: 100%;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  gap: 10px;
-  letter-spacing: 1.5px;
-  font-size: 24px;
-  user-select: none;
+  height: 100vh;
 }
 
-@keyframes smoothMenu {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 100%;
-  }
+/* Navigation menu start */
+#navigationMenu {
+  font-family: iceberg;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: auto;
+  padding-bottom: 12px;
+  max-height: 120px;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
 }
+
+#siteLogo,
+#navigationButtonsContainer {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+/* Remove the size later. */
+#siteLogo {
+  height: 125px;
+  width: 125px;
+  margin-left: 125px;
+}
+
+#navigationButtonsContainer {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  width: 50%;
+  max-width: 850px;
+  justify-content: end;
+  gap: 35px;
+  font-size: 28px;
+}
+
+#navigationButtonsContainer > *:hover {
+  transform: scale(1.08);
+  transition: 300ms transform;
+}
+
+#navigationButtonsContainer > * {
+  transition: 300ms transform;
+}
+
+/* Navigation menu end */
