@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <base href="../displaycar/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>South Bound Auto Sales | Good Quality, Used, Refurbished Cars</title>
-    <link rel="stylesheet" href="../test.css" />
-    <script defer src="../index.js"></script>
-    <script defer src="./displaycars.js"></script>
+    <link rel="stylesheet" href="./test.css" />
+    <script defer src="./index.js"></script>
+    <script defer src="./displaycar/displaycars.js"></script>
   </head>
   <body>
     <div id="wrapper">
+      <!-- Nav Menu start -->
       <nav id="navigationMenu">
         <img
           id="siteLogo"
-          src="../siteMedia/logo-removebg-preview.png"
+          src="./siteMedia/newSiteLogo.png"
           alt="Company Logo"
         />
 
@@ -24,6 +24,9 @@
           <div id="contactButton">Contact</div>
         </div>
       </nav>
+      <!-- Nav menu end -->
+
+      <!-- Banner start -->
       <div id="banner">
         <div id="titleSubtitle">
           <h1>South Bound Auto Sales</h1>
@@ -32,6 +35,34 @@
 
         <div id="referAcustomer">Refer a customer and recieve $100!</div>
       </div>
+      <!-- Banner end -->
+
+      <!-- Main Content start -->
+      <div id="mainContent">
+        <h2 id="latestVehiclesTitle">Latest Vehicles</h2>
+
+        <p id="noCarsText">
+          Our inventory is currently empty. Please check again later.
+        </p>
+
+        <div id="latestVehiclesContainer">
+          <div class="car"></div>
+          <div class="car"></div>
+          <div class="car"></div>
+        </div>
+
+        <a id="clickForInventory" href="./?pageid=2">
+          Click here for full inventory
+        </a>
+      </div>
+
+      <footer>
+        <p>
+          Address: 4513 Ogeechee Rd, Savannah, GA 31405 <br />
+          Phone: (912) 441 9680
+        </p>
+      </footer>
+      <!-- Main content end -->
     </div>
   </body>
 </html>

@@ -15,9 +15,24 @@
 
 body {
   height: 100vh;
+  height: 100svh;
   margin: 0;
+  background: rgb(7, 11, 15);
+  background: linear-gradient(
+    180deg,
+    rgba(7, 11, 15, 1) 50%,
+    rgba(30, 49, 68, 1) 100%
+  );
 }
 
+#wrapper {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Navigation menu start */
 #navigationMenu {
   font-family: iceberg;
   background-color: black;
@@ -25,6 +40,9 @@ body {
   display: grid;
   grid-template-columns: auto;
   padding-bottom: 12px;
+  max-height: 120px;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
 }
 
 #siteLogo,
@@ -35,8 +53,8 @@ body {
 
 /* Remove the size later. */
 #siteLogo {
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
   margin-left: 125px;
 }
 
@@ -60,11 +78,16 @@ body {
   transition: 300ms transform;
 }
 
+/* Navigation menu end */
+
+/* Banner decoration start */
 #banner {
   background-image: url(../siteMedia/bannerImage.jpg);
   background-position: top;
-  background-size: auto;
+  background-size: cover;
   width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
   height: 250px;
   display: grid;
   grid-template-rows: 0.8fr 0.2fr;
@@ -99,6 +122,79 @@ body {
   justify-self: end;
   margin-right: 15px;
   align-self: end;
-  margin-bottom: 8px;
+  position: relative;
+  bottom: 8px;
   font-size: 23px;
+}
+/* Banner end */
+
+/* Main content start */
+#mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+}
+
+#mainContent > h2 {
+  margin: 0;
+  font-family: iceberg;
+  font-size: 42px;
+  color: white;
+}
+
+#noCarsText {
+  margin: 0;
+  color: white;
+  font-family: notoSans;
+  text-align: center;
+}
+
+#mainContent > #latestVehiclesContainer {
+  font-size: 20px;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+}
+
+/* This is where the design for each should be. */
+/* .car {
+  height: 250px;
+  width: 250px;
+  background-color: red;
+} */
+
+#latestVehiclesContainer > p {
+  grid-column: 1 / 4;
+  justify-self: center;
+}
+
+#mainContent > #clickForInventory {
+  margin-top: 25px;
+  font-family: notoSans;
+  color: white;
+  background-color: black;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px white;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+footer {
+  margin-top: auto;
+  color: white;
+  font-family: notoSans;
+  font-size: 16px;
+  border-top: 1px black solid;
+}
+
+footer > p {
+  margin-left: 10px;
 }
