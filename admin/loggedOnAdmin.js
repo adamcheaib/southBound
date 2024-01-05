@@ -19,7 +19,7 @@ async function fetchUploadPage(event) {
 
   const details = {
     page: "uploadCars",
-    username: "test",
+    username: "southbound",
   };
 
   const options = {
@@ -208,7 +208,7 @@ async function fetchInventory(event) {
       async function deletePost(event) {
         const carID =
           event.target.parentElement.parentElement.getAttribute("reference");
-        const details = { username: "test", carId: carID };
+        const details = { username: "southbound", carId: carID };
       }
     }
   } catch (err) {
@@ -240,7 +240,7 @@ async function deletePost(int) {
   try {
     const details = new Request("./requests.php", {
       method: "DELETE",
-      body: JSON.stringify({ username: "test", carId: int }),
+      body: JSON.stringify({ username: "southbound", carId: int }),
     });
     const response = await fetch(details);
 

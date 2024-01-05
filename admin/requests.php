@@ -107,7 +107,7 @@ if ($method == "POST") {
 
 if ($method == "DELETE") {
     $receivedData = json_decode(file_get_contents(("php://input")), true);
-    if ($receivedData["username"] == "test") {
+    if ($receivedData["username"] == "southbound") {
         $idToDelete = $receivedData["carId"];
 
         $allCars = json_decode(file_get_contents("../backend-data/cars.json"), true);

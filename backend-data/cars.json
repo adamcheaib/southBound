@@ -1,1 +1,19 @@
-[]
+[
+    {
+        "id": 0,
+        "images": [
+            "..\/carImages\/..\/carImages\/Adam-Cheaib-1997-Red\/image-1.jpg"
+        ],
+        "frontpageImages": [
+            ".\/carImages\/Adam-Cheaib-1997-Red\/image-1.jpg"
+        ],
+        "carYear": "1997",
+        "carMake": "Adam",
+        "carModel": "Cheaib",
+        "carMiles": "230000",
+        "carColor": "Red",
+        "carDescription": "Amazing Car!",
+        "carPrice": "23000",
+        "directory": "..\/carImages\/Adam-Cheaib-1997-Red"
+    }
+]
