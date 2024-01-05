@@ -1,0 +1,104 @@
+@font-face {
+  font-family: iceberg;
+  src: url(./fonts/Iceberg-Regular.ttf);
+}
+
+@font-face {
+  font-family: imFell;
+  src: url(./fonts/IMFellDoublePicaSC-Regular.ttf);
+}
+
+@font-face {
+  font-family: notoSans;
+  src: url(./fonts/notoSans.ttf);
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+#navigationMenu {
+  font-family: iceberg;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: auto;
+  padding-bottom: 12px;
+}
+
+#siteLogo,
+#navigationButtonsContainer {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+/* Remove the size later. */
+#siteLogo {
+  height: 100px;
+  width: 100px;
+  margin-left: 125px;
+}
+
+#navigationButtonsContainer {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  width: 50%;
+  max-width: 850px;
+  justify-content: end;
+  gap: 35px;
+  font-size: 28px;
+}
+
+#navigationButtonsContainer > *:hover {
+  transform: scale(1.08);
+  transition: 300ms transform;
+}
+
+#navigationButtonsContainer > * {
+  transition: 300ms transform;
+}
+
+#banner {
+  background-image: url(../siteMedia/bannerImage.jpg);
+  background-position: top;
+  background-size: auto;
+  width: 100%;
+  height: 250px;
+  display: grid;
+  grid-template-rows: 0.8fr 0.2fr;
+}
+
+#titleSubtitle {
+  display: flex;
+  flex-direction: column;
+  margin-left: 45px;
+  align-self: center;
+}
+
+#titleSubtitle > * {
+  color: white;
+  margin: 0;
+}
+
+#titleSubtitle > h1 {
+  font-family: iceberg;
+  text-decoration: underline;
+  font-size: 52px;
+}
+
+#titleSubtitle > h2 {
+  font-family: imFell;
+  font-size: 36px;
+}
+
+#banner > #referAcustomer {
+  color: white;
+  font-family: notoSans;
+  justify-self: end;
+  margin-right: 15px;
+  align-self: end;
+  margin-bottom: 8px;
+  font-size: 23px;
+}
