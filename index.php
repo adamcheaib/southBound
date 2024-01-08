@@ -15,6 +15,13 @@ $innerHTML = '
 <div id="wrapper">
 <!-- Nav Menu start -->
 <nav id="navigationMenu">
+
+  <div id="hamburgerMenu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
   <img
     id="siteLogo"
     src="./siteMedia/newSiteLogo.png"
@@ -22,9 +29,9 @@ $innerHTML = '
   />
 
   <div id="navigationButtonsContainer">
-    <div pageId="1" id="homeButton">Home</div>
-    <div pageId="2" id="inventoryButton">Inventory</div>
-    <div pageId="3" id="contactButton">Contact</div>
+    <div page-id="1" class="pcNavButtons" id="homeButton">Home</div>
+    <div page-id="2" class="pcNavButtons" id="inventoryButton">Inventory</div>
+    <div page-id="3" class="pcNavButtons" id="contactButton">Contact</div>
   </div>
 </nav>
 <!-- Nav menu end -->
@@ -111,26 +118,20 @@ if (isset($receivedData)) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheap Cars, Good Cars, Used Cars, Warranty On Cars, Savannah GA | South Bound Auto Sales</title>
-    <link rel="stylesheet" href="./mainpage.css">
-    <link rel="stylesheet" href=<?php echo $cssFile; ?>>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>South Bound Auto Sales | Good Quality, Used, Refurbished Cars</title>
+    <link rel="icon" type="image/png" sizes="64x64" href="./siteMedia/newSiteLogo.png">
+    <link rel="stylesheet" href="./mainpage.css" />
+    <link rel="stylesheet" href=<?php echo $cssFile ?>>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script defer src="./functions.js"></script>
+    <script defer src="./index.js"></script>
+    <script defer src="./displaycar/displaycars.js"></script>
 </head>
 
 <body>
-
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>South Bound Auto Sales | Good Quality, Used, Refurbished Cars</title>
-        <link rel="icon" type="image/png" sizes="64x64" href="./siteMedia/newSiteLogo.png">
-        <link rel="stylesheet" href="./mainpage.css" />
-        <link rel="stylesheet" href=<?php echo $cssFile ?>>
-        <script defer src="./index.js"></script>
-        <script defer src="./displaycar/displaycars.js"></script>
-    </head>
     <?php echo $innerHTML ?>
 </body>
 

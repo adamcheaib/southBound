@@ -21,6 +21,7 @@
 #titleSubtitle > * {
   color: white;
   margin: 0;
+  text-shadow: black 1px 1px 1px;
 }
 
 #titleSubtitle > h1 {
@@ -44,6 +45,37 @@
   bottom: 8px;
   font-size: 23px;
 }
+
+@media (min-width: 0px) and (max-width: 900px) {
+  #titleSubtitle {
+    margin-left: 10px;
+  }
+
+  #titleSubtitle > h1 {
+    font-size: 6.8vw;
+  }
+
+  #titleSubtitle > h2 {
+    font-size: 5.3vw;
+  }
+
+  #banner > #referAcustomer {
+    font-size: 3.3vw;
+  }
+
+  #mainContent > #latestVehiclesTitle {
+    font-size: 6vw;
+  }
+
+  #noCarsText {
+    font-size: 3.5vw;
+  }
+
+  #mainContent > #clickForInventory {
+    font-size: 3.5vw;
+  }
+}
+
 /* Banner end */
 
 /* Main content start */
@@ -52,7 +84,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 75px;
 }
 
 #mainContent > h2 {
@@ -89,8 +120,8 @@
   justify-self: center;
 }
 
-#mainContent > #clickForInventory {
-  margin-top: 25px;
+#clickForInventory {
+  margin: 25px 0 0 0;
   font-family: notoSans;
   color: white;
   background-color: black;
@@ -103,16 +134,4 @@
   font-size: 18px;
   margin-bottom: 15px;
   text-decoration: none;
-}
-
-footer {
-  margin-top: auto;
-  color: white;
-  font-family: notoSans;
-  font-size: 16px;
-  border-top: 1px black solid;
-}
-
-footer > p {
-  margin-left: 10px;
 }

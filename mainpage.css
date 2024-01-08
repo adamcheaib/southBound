@@ -1,3 +1,7 @@
+:root {
+  --siteLogoSize: 125px;
+}
+
 @font-face {
   font-family: iceberg;
   src: url(./fonts/Iceberg-Regular.ttf);
@@ -14,8 +18,6 @@
 }
 
 body {
-  height: 100vh;
-  height: 100svh;
   margin: 0;
   background: rgb(7, 11, 15);
   background: linear-gradient(
@@ -23,13 +25,14 @@ body {
     rgba(7, 11, 15, 1) 50%,
     rgba(30, 49, 68, 1) 100%
   );
+  overflow-x: hidden;
 }
 
 #wrapper {
   overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   height: 100vh;
+  grid-template-rows: max-content auto auto;
 }
 
 /* Navigation menu start */
@@ -51,13 +54,6 @@ body {
   grid-column: 1;
 }
 
-/* Remove the size later. */
-#siteLogo {
-  height: 125px;
-  width: 125px;
-  margin-left: 125px;
-}
-
 #navigationButtonsContainer {
   justify-self: center;
   align-self: center;
@@ -77,5 +73,195 @@ body {
 #navigationButtonsContainer > * {
   transition: 300ms transform;
 }
-
 /* Navigation menu end */
+
+/* Handles the site logo for PC & Tablet view. */
+@media (min-width: 901px) {
+  /* Remove the size later. */
+  #siteLogo {
+    height: var(--siteLogoSize);
+    width: var(--siteLogoSize);
+    margin-left: 125px;
+  }
+
+  #hamburgerMenu {
+    display: none;
+  }
+}
+
+/* Handles the view for the logo for phone view. */
+@media (min-width: 0px) and (max-width: 900px) {
+  #navigationButtonsContainer {
+    visibility: hidden;
+  }
+
+  #navigationMenu {
+    max-height: 75px;
+  }
+
+  /* Phone Hamburger menu start */
+  #hamburgerMenu {
+    width: 30px;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    align-self: center;
+    margin-left: 2vw;
+  }
+
+  #hamburgerMenu > * {
+    height: 2px;
+    background-color: white;
+  }
+
+  #phoneMenuContainer {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background: rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+  }
+
+  #phoneMenuContainer > #slideMenu {
+    flex-grow: 0.3;
+    background-color: black;
+    color: white;
+    position: relative;
+    left: -300px;
+    transition: left 300ms;
+  }
+
+  #slideMenu > div {
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    top: 50px;
+  }
+
+  #slideMenu > div > h3 {
+    border-bottom: 1px solid white;
+    font-size: 28px;
+  }
+
+  .phoneNavButtons {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+  }
+
+  #phoneMenuContainer > #closePhoneMenu {
+    flex-grow: 0.7;
+  }
+
+  /* Phone Hamburger menu end */
+
+  #siteLogo {
+    justify-self: center;
+    margin-left: 0px;
+    height: 75px;
+    width: 75px;
+    align-self: center;
+  }
+
+  #wrapper > footer {
+    font-size: 12px;
+  }
+}
+/* Phone view end. */
+
+/* Loading screen start */
+#dialogCover {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  transform: translate(50%, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: white;
+}
+
+#dialogCover > div {
+  text-align: center;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dialogCover > div::after {
+  content: "";
+  animation-name: loadingDots;
+  animation-duration: 3.2s;
+  animation-iteration-count: infinite;
+}
+
+.loadingCar {
+  position: absolute;
+  width: 100px;
+  left: 100vw;
+  top: 50vh;
+  animation-name: carAnimation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loadingDots {
+  0% {
+    content: "";
+  }
+
+  25% {
+    content: ".";
+  }
+
+  50% {
+    content: "..";
+  }
+
+  100% {
+    content: "...";
+  }
+}
+
+@keyframes carAnimation {
+  from {
+    left: 100vw;
+  }
+
+  to {
+    left: calc(0px - 100px);
+  }
+}
+/* Loading screen end */
+
+footer {
+  margin-top: auto;
+  color: white;
+  font-family: notoSans;
+  font-size: 16px;
+  border-top: 1px black solid;
+}
+
+footer > p {
+  margin-left: 10px;
+}
