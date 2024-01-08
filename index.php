@@ -67,10 +67,8 @@ $innerHTML = '
 </div>
 
 <footer>
-  <p>
-    Address: 4513 Ogeechee Rd, Savannah, GA 31405 <br />
-    Phone: (912) 441 9680
-  </p>
+    <a href="https://maps.app.goo.gl/7NzBzqQj2gBjq9pf7" target=blank_>📌Address: 4513 Ogeechee Rd, Savannah, GA 31405</a> <br />
+   <a href="tel:9124419680">☎ Phone: (912) 441 9680</a> 
 </footer>
 <!-- Main content end -->
 </div>';

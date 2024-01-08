@@ -68,10 +68,12 @@ body {
 #navigationButtonsContainer > *:hover {
   transform: scale(1.08);
   transition: 300ms transform;
+  cursor: pointer;
 }
 
 #navigationButtonsContainer > * {
   transition: 300ms transform;
+  user-select: none;
 }
 /* Navigation menu end */
 
@@ -91,8 +93,9 @@ body {
 
 /* Handles the view for the logo for phone view. */
 @media (min-width: 0px) and (max-width: 900px) {
-  #navigationButtonsContainer {
-    visibility: hidden;
+  #navigationButtonsContainer,
+  #navigationsButtonsContainer > * {
+    display: none;
   }
 
   #navigationMenu {
@@ -132,7 +135,7 @@ body {
 
   #phoneMenuContainer > #slideMenu {
     flex-grow: 0.3;
-    background-color: black;
+    background-color: #24343f;
     color: white;
     position: relative;
     left: -300px;
@@ -140,13 +143,13 @@ body {
   }
 
   #slideMenu > div {
-    height: 100%;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     position: relative;
     top: 50px;
+    font-family: iceberg;
   }
 
   #slideMenu > div > h3 {
@@ -176,12 +179,14 @@ body {
 
   #wrapper > footer {
     font-size: 12px;
+    color: white;
   }
 }
 /* Phone view end. */
 
 /* Loading screen start */
 #dialogCover {
+  overflow: hidden;
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
@@ -221,7 +226,7 @@ body {
   left: 100vw;
   top: 50vh;
   animation-name: carAnimation;
-  animation-duration: 5s;
+  animation-duration: 4.5s;
   animation-iteration-count: infinite;
 }
 
@@ -262,6 +267,7 @@ footer {
   border-top: 1px black solid;
 }
 
-footer > p {
+footer > a {
+  color: white;
   margin-left: 10px;
 }
